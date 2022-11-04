@@ -9,11 +9,9 @@ public:
                 temp.push(s.at(i));
             } else {
                 if (! temp.empty()) {
-                    if (s.at(i) == ')' and temp.top() == '(') {
-                        temp.pop();
-                    } else if (s.at(i) == '}' and temp.top() == '{') {
-                        temp.pop();
-                    } else if (s.at(i) == ']' and temp.top() == '[') {
+                    if (s.at(i) == ')' and temp.top() == '(' or
+                        s.at(i) == '}' and temp.top() == '{' or
+                        s.at(i) == ']' and temp.top() == '[') {
                         temp.pop();
                     } else {
                         return false;

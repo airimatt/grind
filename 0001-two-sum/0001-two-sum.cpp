@@ -4,8 +4,8 @@ public:
         
         vector<int> returning;
         
-        for (int i = 0; i < nums.size(); i++) {
-            for (int j = 1; j < nums.size() and i != j; j++) {
+        for (int i = 0; i < nums.size() - 1; i++) {
+            for (int j = i + 1; j < nums.size(); j++) {
                 if (nums.at(i) + nums.at(j) == target) {
                         returning.push_back(i);
                         returning.push_back(j);

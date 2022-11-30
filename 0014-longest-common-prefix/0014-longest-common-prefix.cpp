@@ -9,12 +9,10 @@ public:
                 return "";
             }
             if (lcp.length() > strs[i].length()) {
-                // lcp.erase(strs[i].length(), lcp.length() - strs[i].length());
                 lcp = lcp.substr(0, strs[i].length());
             }
             for (int j = 0; j < strs[i].length(); j++) {
                 if (strs[i][j] != lcp[j]) {
-                    // lcp.erase(j, strs[i].length() - j);
                     lcp = lcp.substr(0, j);
                 }
             }

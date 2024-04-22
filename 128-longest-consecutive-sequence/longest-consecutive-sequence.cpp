@@ -5,9 +5,6 @@ public:
         int size = nums.size();
 
         unordered_set<int> myset(nums.begin(), nums.end());
-        // for (int i = 0; i < size; i++) {
-        //     myset.insert(nums[i]);
-        // }
 
         int Max = 0;
 

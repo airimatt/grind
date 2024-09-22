@@ -2,18 +2,17 @@ class KthLargest:
 
     def __init__(self, k: int, nums: List[int]):
         self.k = k
-        self.stream = []
-        nums.sort()
-        for n in nums:
-            self.stream.append(n)
+        self.minHeap = nums
+        heapq.heapify(self.minHeap)
+        while len(self.minHeap) > k:
+            heapq.heappop(self.minHeap)
         
 
     def add(self, val: int) -> int:
-        # need to do binary search and add element where it belongs in stream
-        # return elt at index k - 1
-        self.stream.append(val)
-        self.stream.sort()
-        return self.stream[len(self.stream) - self.k]
+        heapq.heappush(self.minHeap, val)
+        if len(self.minHeap) > self.k:
+            heapq.heappop(self.minHeap)
+        return self.minHeap[0]
         
 
 

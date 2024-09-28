@@ -15,6 +15,3 @@ class Solution:
                 nums.pop()
 
         return len(nums)
-
-
-        

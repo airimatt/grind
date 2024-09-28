@@ -6,7 +6,6 @@
 class Solution:
     def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
 
-        # tracker = set()
         temp = -101
 
         prev, curr = None, head

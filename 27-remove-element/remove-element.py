@@ -8,13 +8,11 @@ class Solution:
 
         for i in range(len(nums) - 1, -1, -1):
             if nums[i] == val:
-                if i == len(nums) - 1:
-                    nums.pop()
-                else:
+                if i != len(nums) - 1:
                     temp = nums[len(nums) - 1]
                     nums[len(nums) - 1] = nums[i]
                     nums[i] = temp
-                    nums.pop()
+                nums.pop()
 
         return len(nums)
 

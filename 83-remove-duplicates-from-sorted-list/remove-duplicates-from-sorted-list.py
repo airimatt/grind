@@ -6,14 +6,15 @@
 class Solution:
     def deleteDuplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
 
-        tracker = set()
+        # tracker = set()
+        temp = -101
 
         prev, curr = None, head
         while curr:
-            if curr.val in tracker:
+            if curr.val == temp:
                 prev.next = curr.next
             else:
-                tracker.add(curr.val)
+                temp = curr.val
                 prev = curr
             curr = curr.next
         

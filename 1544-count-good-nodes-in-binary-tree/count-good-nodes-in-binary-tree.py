@@ -10,14 +10,13 @@ class Solution:
         def dfs(root, maxNum):
             if not root:
                 return 0
-            if root.val >= maxNum:
-                good = 1
-            else:
-                good = 0
+            good = 1 if root.val >= maxNum else 0
+
             maxNum = max(maxNum, root.val)
 
             good += dfs(root.left, maxNum)
             good += dfs(root.right, maxNum)
+
             return good
         
         return dfs(root, root.val)
